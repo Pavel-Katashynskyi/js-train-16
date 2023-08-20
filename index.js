@@ -328,20 +328,18 @@ function countVowelsAndConsonants(word) {
   // Скидаємо лічильники
 
   const vowels = "aeiou";
-  let vowelCount = 0;
-  let consonantCount = 0;
 
   for (let letter of word) {
     letter = letter.toLowerCase();
     if (vowels.includes(letter)) {
-      vowelCount++;
+      console.count("Голосні");
     } else if (letter >= "a" && letter <= "z") {
-      consonantCount++;
+      console.count("Приголосні");
     }
   }
-
-  console.log(`Голосних літер: ${vowelCount}`);
-  console.log(`Приголосних літер: ${consonantCount}`);
+  console.countReset("Голосні");
+  console.countReset("Приголосні");
 }
+
 console.log("Завдання: 10 ==============================");
 countVowelsAndConsonants("HelloWorld!");
